@@ -78,9 +78,7 @@
       <Name>Newsletter.Models</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Migrations\SeedData\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201708061003427_InitialCreate.resx">
       <DependentUpon>201708061003427_InitialCreate.cs</DependentUpon>
