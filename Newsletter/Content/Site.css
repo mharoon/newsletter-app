@@ -1,0 +1,35 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,
+textarea {
+    max-width: 280px;
+}*/
+
+.logo {
+    margin:15px 0;
+}
+
+#Subscription-form {
+    background-color: #222;
+    background-image: url('../images/map-image.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    color:#FFF;
+    padding-bottom:50px;
+}
+
+.form-control {
+    height:48px;
+        font-size: 14px;
+}

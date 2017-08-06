@@ -1,0 +1,54 @@
+﻿<section id="Subscription-form" class="subscription">
+    <div class="alert alert-success" *ngIf="hasSuccess">Thank You for Subscribing</div>
+    <div class="alert alert-danger" *ngIf="hasError">{{errorMessage}}</div>
+    <div class="container">
+        <div class="contact-header" align="center">
+            <h2>Signup for our NewsLetter</h2>
+            <p>&nbsp;</p>
+        </div>
+        <!-- Form  -->
+        <form [formGroup]="subscriptionForm" (ngSubmit)="submitForm(subscriptionForm.value)">
+            <div class="row">
+                <div class="col-md-4 col-sm-4">
+                    <h4 align="center"><strong>Greenfinch Technology,</strong></h4>
+                    <p align="center"><strong>Address:</strong>  Docklands Innovation Park 128 - 130 East Wall Road Dublin 3,<br>Ireland<br><br><strong>Contact:</strong> +353 (0)1 818 2949</p>
+                </div>
+                <div class="col-md-4 col-sm-4 ">
+                    <div class="form-group" [ngClass]="{'has-error':!subscriptionForm.controls['email'].valid && subscriptionForm.controls['email'].touched}">
+                        <label for="exampleInputEmailId">* Email-id</label>
+                        <input  name="email" type="text" class="form-control" id="EmailId" placeholder="Enter email-id" [formControl]="subscriptionForm.controls['email']" maxlength="50">
+                        <div *ngIf="subscriptionForm.controls['email'].hasError('pattern') && subscriptionForm.controls['email'].touched" class="alert alert-danger">Please enter a valid email address.</div>
+                        <div *ngIf="subscriptionForm.controls['email'].hasError('duplicated') && subscriptionForm.controls['email'].touched" class="alert alert-danger">Please enter a valid email address.</div>
+
+                    </div>
+
+                    <div class="form-group" [ngClass]="{'has-error':!subscriptionForm.controls['source'].valid && subscriptionForm.controls['source'].touched}">
+                        <label for="exampleInputUsername">* How did you hear about us?</label>
+                        <select class="form-control" id="sel1" name="source" [formControl]="subscriptionForm.controls['source']">
+                            <option value="">- Please Select -</option>
+                            <option value="opt.Id" *ngFor="let opt of sourceTypes">{{opt.Name}}</option>
+                            
+
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputMessage">Reason</label>
+                        <textarea class="form-control" rows="3" for="inputMessage" placeholder="Enter Your Message" name="reason" [formControl]="subscriptionForm.controls['reason']" maxlength="200"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-block btn-lg btn-success submit" [disabled]="!subscriptionForm.valid"><i class="fa fa-paper-plane" aria-hidden="true"></i> Submit</button>
+                    </div>
+
+                </div>
+                <div class="col-md-4 col-sm-4">
+
+                    
+                    <br>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+</section>  
